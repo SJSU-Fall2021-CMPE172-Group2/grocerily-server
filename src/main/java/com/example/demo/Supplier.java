@@ -14,11 +14,11 @@ public class Supplier {
 	private String supplier_contact;
 	
 
-	public Long getSup_id() {
+	public Long getSupId() {
 		return this.sup_id;
 	}
 
-	public void setSup_id(Long sup_id) {
+	public void setSupId(Long sup_id) {
 		this.sup_id = sup_id;
 	}
 

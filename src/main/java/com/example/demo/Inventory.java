@@ -14,23 +14,23 @@ public class Inventory {
   private Long product_id;
   private Long store_id;
   private Long quantity;
-  private Long unit_price;
+  private Double unit_price;
   private Date stock_date;
   
 
-  public Long getProduct_id() {
+  public Long getProductId() {
     return this.product_id;
   }
 
-  public void setProduct_id(Long product_id) {
+  public void setProductId(Long product_id) {
     this.product_id = product_id;
   }
 
-  public Long getStore_id() {
+  public Long getStoreId() {
     return this.store_id;
   }
 
-  public void setStore_id(Long store_id) {
+  public void setStoreId(Long store_id) {
     this.store_id = store_id;
   }
 
@@ -42,11 +42,11 @@ public class Inventory {
     this.quantity = quantity;
   }
 
-  public Long getUnit_price() {
+  public Double getUnit_price() {
     return this.unit_price;
   }
 
-  public void setUnit_price(Long unit_price) {
+  public void setUnit_price(Double unit_price) {
     this.unit_price = unit_price;
   }
 

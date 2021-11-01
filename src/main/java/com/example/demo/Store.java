@@ -14,11 +14,11 @@ public class Store {
   private String store_contact;
   private String store_address;
 
-  public Long getStore_id() {
+  public Long getStoreId() {
     return this.store_id;
   }
 
-  public void setStore_id(Long store_id) {
+  public void setStoreId(Long store_id) {
     this.store_id = store_id;
   }
 
