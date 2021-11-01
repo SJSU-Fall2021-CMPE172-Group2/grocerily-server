@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RepositoryRestResource
 @CrossOrigin(origins="http://localhost:3000")
-public interface Inventory_Repository extends CrudRepository<Inventory, Long>{
+public interface InventoryRepository extends CrudRepository<Inventory, Long>{
 }
