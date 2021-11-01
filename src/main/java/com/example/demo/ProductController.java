@@ -19,13 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
 
   @Autowired
-  ProductRepository productRepo;
+  ProductRepository repo;
   private ArrayList<Product> list;
 
   @GetMapping()
   public List<Product> getAllProducts() {
     list = new ArrayList<Product>();
-    Iterator<Product> it = productRepo.findAll().iterator();
+    Iterator<Product> it = repo.findAll().iterator();
     while(it.hasNext()) {
       list.add(it.next());
     }
@@ -34,7 +34,7 @@ public class ProductController {
 
   @GetMapping("/{productId}")
   public Product getProductByID(@PathVariable Long productId) {
-    return productRepo.findById(productId).get();
+    return repo.findById(productId).get();
   }
 
   /*
@@ -46,20 +46,20 @@ public class ProductController {
     product.setProductId(Long.parseLong(productId));
     product.setProductName(productName);
     product.setCatId(Long.parseLong(catId));
-    productRepo.save(product);
+    repo.save(product);
   }
 
   @PutMapping("/update")
   public void updateProduct(@RequestParam String productId, @RequestParam String catId, @RequestParam String productName) {
-    Product productToUpdate = productRepo.findById(Long.parseLong(productId)).get();
+    Product productToUpdate = repo.findById(Long.parseLong(productId)).get();
     productToUpdate.setCatId(Long.parseLong(catId));
     productToUpdate.setProductName(productName);
-    productRepo.save(productToUpdate);
+    repo.save(productToUpdate);
   }
 
   @DeleteMapping("/delete/{productId}")
   public void deleteProduct(@PathVariable String productId) {
-    productRepo.deleteById(Long.parseLong(productId));
+    repo.deleteById(Long.parseLong(productId));
   }
 }
 
