@@ -9,40 +9,40 @@ import javax.persistence.Id;
 public class Store {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long store_id;
-  private String store_name;
-  private String store_contact;
-  private String store_address;
+  private Long storeId;
+  private String storeName;
+  private String storeContact;
+  private String storeAddress;
 
   public Long getStoreId() {
-    return this.store_id;
+    return this.storeId;
   }
 
-  public void setStoreId(Long store_id) {
-    this.store_id = store_id;
+  public void setStoreId(Long storeId) {
+    this.storeId = storeId;
   }
 
-  public String getStore_name() {
-    return this.store_name;
+  public String getStoreName() {
+    return this.storeName;
   }
 
-  public void setStore_name(String store_name) {
-    this.store_name = store_name;
+  public void setStoreName(String storeName) {
+    this.storeName = storeName;
   }
 
-  public String getStore_contact() {
-    return this.store_contact;
+  public String getStoreContact() {
+    return this.storeContact;
   }
 
-  public void setStore_contact(String store_contact) {
-    this.store_contact = store_contact;
+  public void setStoreContact(String storeContact) {
+    this.storeContact = storeContact;
   }
 
-  public String getStore_address() {
-    return this.store_address;
+  public String getStoreAddress() {
+    return this.storeAddress;
   }
 
-  public void setStore_address(String store_address) {
-    this.store_address = store_address;
+  public void setStoreAddress(String storeAddress) {
+    this.storeAddress = storeAddress;
   }
 }
