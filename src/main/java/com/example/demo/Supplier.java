@@ -9,34 +9,32 @@ import javax.persistence.Id;
 public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long supId;	
-	private String supplierName;
-	private String supplierContact;
+	private Long sup_id;	
+	private String supplier_name;
+	private String supplier_contact;
 	
 
-	public Long getSupId() {
-		return this.supId;
+	public Long getSupplierId() {
+		return this.sup_id;
 	}
 
-	public void setSupId(Long supId) {
-		this.supId = supId;
+	public void setSupplierId(Long supplierId) {
+		this.sup_id = supplierId;
 	}
 
 	public String getSupplierName() {
-		return this.supplierName;
+		return this.supplier_name;
 	}
 
 	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
+		this.supplier_name = supplierName;
 	}
 
 	public String getSupplierContact() {
-		return this.supplierContact;
+		return this.supplier_contact;
 	}
 
 	public void setSupplierContact(String supplierContact) {
-		this.supplierContact = supplierContact;
-	}
-
-	
+		this.supplier_contact = supplierContact;
+	}	
 }

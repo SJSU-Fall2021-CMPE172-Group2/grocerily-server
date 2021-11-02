@@ -9,18 +9,18 @@ import javax.persistence.Id;
 public class User {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userId;
+	private Long user_id;
   private String username;
   private String password;
-  private Long storeId;
+  private Long store_id;
 
 
   public Long getUserId() {
-    return this.userId;
+    return this.user_id;
   }
 
   public void setUserId(Long userId) {
-    this.userId = userId;
+    this.user_id = userId;
   }
 
   public String getUsername() {
@@ -40,11 +40,11 @@ public class User {
   }
 
   public Long getStoreId() {
-    return this.storeId;
+    return this.store_id;
   }
 
   public void setStoreId(Long storeId) {
-    this.storeId = storeId;
+    this.store_id = storeId;
   }
 
 }
