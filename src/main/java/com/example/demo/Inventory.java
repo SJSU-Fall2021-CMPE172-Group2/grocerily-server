@@ -11,12 +11,20 @@ import javax.persistence.Id;
 public class Inventory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long inventory_id;
   private Long product_id;
   private Long store_id;
   private Long quantity;
   private Double unit_price;
   private Date stock_date;
   
+  public Long getInventoryId() {
+    return this.inventory_id;
+  }
+
+  public void setInventoryId(Long inventory_id) {
+    this.inventory_id = inventory_id;
+  }
 
   public Long getProductId() {
     return this.product_id;
@@ -42,19 +50,19 @@ public class Inventory {
     this.quantity = quantity;
   }
 
-  public Double getUnit_price() {
+  public Double getUnitPrice() {
     return this.unit_price;
   }
 
-  public void setUnit_price(Double unit_price) {
+  public void setUnitPrice(Double unit_price) {
     this.unit_price = unit_price;
   }
 
-  public Date getStock_date() {
+  public Date getStockDate() {
     return this.stock_date;
   }
 
-  public void setStock_date(Date stock_date) {
+  public void setStockDate(Date stock_date) {
     this.stock_date = stock_date;
   }
 

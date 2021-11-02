@@ -41,18 +41,18 @@ public class ProductController {
     Bug 1: when create new product, different product id is stored in api not what it meant to be.
   */
   @PostMapping("/create")
-  public void createProduct(@RequestParam String productId, @RequestParam String catId, @RequestParam String productName) {
+  public void createProduct(@RequestParam(required = false) Long productId, @RequestParam Long catId, @RequestParam String productName) {
     Product product = new Product();
-    product.setProductId(Long.parseLong(productId));
+    product.setProductId(productId);
+    product.setCatId(catId);
     product.setProductName(productName);
-    product.setCatId(Long.parseLong(catId));
     repo.save(product);
   }
 
   @PutMapping("/update")
-  public void updateProduct(@RequestParam String productId, @RequestParam String catId, @RequestParam String productName) {
-    Product productToUpdate = repo.findById(Long.parseLong(productId)).get();
-    productToUpdate.setCatId(Long.parseLong(catId));
+  public void updateProduct(@RequestParam Long productId, @RequestParam Long catId, @RequestParam String productName) {
+    Product productToUpdate = repo.findById(productId).get();
+    productToUpdate.setCatId(catId);
     productToUpdate.setProductName(productName);
     repo.save(productToUpdate);
   }
