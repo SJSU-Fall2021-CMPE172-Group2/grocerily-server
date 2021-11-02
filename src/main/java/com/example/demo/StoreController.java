@@ -20,6 +20,8 @@ public class StoreController {
 
   @Autowired
   StoreRepository repo;
+  @Autowired
+  InventoryRepository inventoryRepo;
   private ArrayList<Store> list;
 
   @GetMapping()
@@ -35,6 +37,19 @@ public class StoreController {
   @GetMapping("/{storeId}")
   public Store getStoreByID(@PathVariable Long storeId) {
     return repo.findById(storeId).get();
+  }
+
+  @GetMapping("/{storeId}/inventory")
+  public ArrayList<Inventory> getAllInventoryByStoreId(@PathVariable Long storeId) {
+    ArrayList<Inventory> inventoryList = new ArrayList<Inventory>();
+    Iterator<Inventory> it = inventoryRepo.findAll().iterator();
+    while(it.hasNext()) {
+      Inventory inventory = it.next();
+      if(inventory.getStoreId().equals(storeId)){
+        inventoryList.add(inventory);
+      }
+    }
+    return inventoryList;
   }
 
   /*
