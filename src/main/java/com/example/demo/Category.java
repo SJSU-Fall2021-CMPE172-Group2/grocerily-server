@@ -9,22 +9,22 @@ import javax.persistence.Id;
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long cat_id;
-	private String cat_name;
+	private Long catId;
+	private String catName;
 
 	public Long getCategoryId() {
-		return cat_id;
+		return catId;
 	}
 
 	public void setCategoryId(Long id) {
-		this.cat_id = id;
+		this.catId = id;
 	}
 
 	public String getCategoryName() {
-		return cat_name;
+		return catName;
 	}
 
 	public void setCategoryName(String name) {
-		this.cat_name = name;
+		this.catName = name;
 	}
 }

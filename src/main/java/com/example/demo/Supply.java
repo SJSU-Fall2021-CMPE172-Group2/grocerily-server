@@ -11,22 +11,22 @@ import javax.persistence.Id;
 public class Supply {
   @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long product_id;
-  private Long sup_id;
+	private Long productId;
+  private Long supId;
 
   public Long getProduct_id() {
-    return this.product_id;
+    return this.productId;
   }
 
-  public void setProduct_id(Long product_id) {
-    this.product_id = product_id;
+  public void setProduct_id(Long productId) {
+    this.productId = productId;
   }
 
-  public Long getSup_id() {
-    return this.sup_id;
+  public Long getSupId() {
+    return this.supId;
   }
 
-  public void setSup_id(Long sup_id) {
-    this.sup_id = sup_id;
+  public void setSupId(Long supId) {
+    this.supId = supId;
   }
 }
