@@ -43,7 +43,7 @@ public class SupplierController {
   @PostMapping("/create")
   public void createSupplier(@RequestParam(required = false) Long supplierId, @RequestParam String supplierName, @RequestParam String supplierContact) {
     Supplier supplier = new Supplier();
-    supplier.setSupId(supplierId);
+    supplier.setSupplierId(supplierId);
     supplier.setSupplierName(supplierName);
     supplier.setSupplierContact(supplierContact);
     repo.save(supplier);
