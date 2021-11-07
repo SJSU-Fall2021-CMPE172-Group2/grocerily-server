@@ -1,0 +1,44 @@
+package edu.sjsu.enterprise.grocery;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer product_id;
+	
+	private String product_name;
+	
+	private Integer cat_id;
+
+	public Integer getProduct_id() {
+		return product_id;
+	}
+
+	public void setProduct_id(Integer product_id) {
+		this.product_id = product_id;
+	}
+
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
+
+	public Integer getCat_id() {
+		return cat_id;
+	}
+
+	public void setCat_id(Integer cat_id) {
+		this.cat_id = cat_id;
+	}
+}
+
+
+
