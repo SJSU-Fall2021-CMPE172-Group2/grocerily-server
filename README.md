@@ -17,6 +17,26 @@
 ### Run server
 	java -jar target/grocery-0.0.1-SNAPSHOT.jar
 
+#### Get all products
+	http://localhost:8080/product/all
+	
+#### Add a product
+	http://localhost:8080/product/add
+Request
+
+	POST /product/add HTTP/1.1
+	Host: localhost:8080
+	Content-Type: application/json
+	
+	{
+		"product_name":"Banana",
+		"cat_id":2
+	}
+	
+Respond
+
+	Saved
+	
 ### Reference Documentation
 For further reference, please consider the following sections:
 
