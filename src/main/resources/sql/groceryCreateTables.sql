@@ -21,7 +21,6 @@ CREATE TABLE category
   cat_name VARCHAR(50) NOT NULL,
   PRIMARY KEY (cat_id)
 );
-
 CREATE TABLE user
 (
   user_id INT AUTO_INCREMENT NOT NULL,
@@ -51,7 +50,6 @@ CREATE TABLE supply
 
 CREATE TABLE inventory
 (
-
   quantity INT NOT NULL,
   unit_price FLOAT NOT NULL,
   stock_date DATE NOT NULL,
