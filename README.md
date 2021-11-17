@@ -20,6 +20,7 @@
 #### Get all products
 	http://localhost:8080/product/all
 	
+	
 #### Add a product
 	http://localhost:8080/product/add
 Request
@@ -36,6 +37,27 @@ Request
 Respond
 
 	Saved
+	
+#### Create user	
+	http://localhost:8080/user/create
+Request
+
+	POST /user/create HTTP/1.1
+	Host: localhost:8080
+	Content-Type: application/json
+	Cache-Control: no-cache
+	Postman-Token: 1f115190-ddc5-5561-d0ad-9a8b73a31273
+
+	{
+		"userName":"kim",
+		"password_hash":"ku7ejjokolkdfja",
+		"title":"manager"
+	}
+
+#### Get user
+	http://localhost:8080/user/?name={name}
+
+
 	
 ### Reference Documentation
 For further reference, please consider the following sections:

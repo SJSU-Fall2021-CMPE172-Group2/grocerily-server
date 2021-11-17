@@ -21,14 +21,13 @@ CREATE TABLE category
   cat_name VARCHAR(50) NOT NULL,
   PRIMARY KEY (cat_id)
 );
-
-CREATE TABLE staff
+CREATE TABLE user
 (
-  staff_id INT AUTO_INCREMENT NOT NULL,
-  staff_name varchar(20) NOT NULL,
-  staff_password varchar(20) NOT NULL,
+  user_id INT AUTO_INCREMENT NOT NULL,
+  user_name varchar(20) NOT NULL,
+  password_hash varchar(20) NOT NULL,
   title varchar(20) NOT NULL,
-  PRIMARY KEY (staff_id)
+  PRIMARY KEY (user_id)
 );
 
 CREATE TABLE product
