@@ -2,16 +2,19 @@ package edu.sjsu.enterprise.grocery.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import edu.sjsu.enterprise.grocery.Product;
 import edu.sjsu.enterprise.grocery.ProductRepository;
 
-@Controller
+@RestController
+@CrossOrigin
 @RequestMapping(path="/product")
 public class GroceryController {
   @Autowired
