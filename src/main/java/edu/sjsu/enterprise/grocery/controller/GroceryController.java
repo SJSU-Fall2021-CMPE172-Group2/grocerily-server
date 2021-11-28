@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import edu.sjsu.enterprise.grocery.Product;
+import edu.sjsu.enterprise.grocery.Products;
 import edu.sjsu.enterprise.grocery.ProductRepository;
 
 @Controller
@@ -18,13 +18,13 @@ public class GroceryController {
   private ProductRepository productRepository;
 
   @PostMapping(path="/add", consumes = "application/json")
-  public @ResponseBody String addNewUser (@RequestBody Product product) {
+  public @ResponseBody String addNewUser (@RequestBody Products product) {
     productRepository.save(product);
     return "Saved";
   }
 
   @GetMapping(path="/all", produces = "application/json")
-  public @ResponseBody Iterable<Product> getAllUsers() {
+  public @ResponseBody Iterable<Products> getAllUsers() {
     // This returns a JSON or XML with the users
     return productRepository.findAll();
   }

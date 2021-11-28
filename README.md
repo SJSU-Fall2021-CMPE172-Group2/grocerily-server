@@ -46,7 +46,6 @@ Request
 	Host: localhost:8080
 	Content-Type: application/json
 	Cache-Control: no-cache
-	Postman-Token: 1f115190-ddc5-5561-d0ad-9a8b73a31273
 
 	{
 		"userName":"kim",
@@ -57,7 +56,29 @@ Request
 #### Get user
 	http://localhost:8080/user/?name={name}
 
+#### Add an inventory
+	http://localhost:8080/inventory/add
+Request
 
+	POST /inventory/add HTTP/1.1
+	Host: localhost:8080
+	Content-Type: application/json
+	Cache-Control: no-cache
+	
+    {
+    	  "store_id": 1,
+        "quantity": 130,
+        "unit_price": 0.49,
+        "expiration": "2021-12-02T07:00:00.000+00:00",
+        "product": {
+            "product_id": 4,
+            "product_name": "Banana",
+            "cat_id": 1
+        }
+    }
+    
+#### Get all inventory
+	http://localhost:8080/inventory/all
 	
 ### Reference Documentation
 For further reference, please consider the following sections:
