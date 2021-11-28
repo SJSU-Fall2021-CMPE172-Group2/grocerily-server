@@ -18,6 +18,8 @@ public class User {
 	private String password_hash;
 
 	private String title;
+	
+	private String name;
 
 	public Integer getUser_id() {
 		return user_id;
@@ -49,6 +51,14 @@ public class User {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

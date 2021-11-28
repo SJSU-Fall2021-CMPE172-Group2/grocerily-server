@@ -1,5 +1,6 @@
 package edu.sjsu.enterprise.grocery.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import edu.sjsu.enterprise.grocery.User;
 import edu.sjsu.enterprise.grocery.UserRepository;
 
-@Controller
+@RestController
+@CrossOrigin
 @RequestMapping(path = "/user")
 public class UserController {
+	
 	@Autowired
 	private UserRepository userRepository;
 
@@ -25,7 +29,7 @@ public class UserController {
 		userRepository.save(user);
 		return "Saved:" + user.getUserName();
 	}
-
+	
 	@GetMapping(path = "/", produces = "application/json")
 	public @ResponseBody List<User> getUser(@RequestParam String name) {
 		// This returns a JSON or XML with the users
