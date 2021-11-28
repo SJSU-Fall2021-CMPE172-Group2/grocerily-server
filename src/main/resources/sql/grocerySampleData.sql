@@ -13,8 +13,17 @@ INSERT INTO category(cat_name) VALUES('Drinks');
 INSERT INTO category(cat_name) VALUES('Frozen');
 
 
-INSERT INTO product(product_name,cat_id) VALUES('Corn',1);
+INSERT INTO products(product_name,cat_id) VALUES('Corn',1);
+INSERT INTO products(product_name,cat_id) VALUES('Apple',1);
+INSERT INTO products(product_name,cat_id) VALUES('Orange',1);
+INSERT INTO products(product_name,cat_id) VALUES('Banana',1);
+INSERT INTO products(product_name,cat_id) VALUES('Egg',4);
 
 INSERT INTO supply(product_id,sup_id) VALUES (1,1);
 
-INSERT INTO inventory(quantity,unit_price,stock_date,product_id,store_id) VALUES(100, 0.50,'2021-10-02',1,1);
+INSERT INTO inventory(quantity,unit_price,expiration,product_id,store_id) VALUES(100, 1.50,'2021-10-02',1,1);
+INSERT INTO inventory(quantity,unit_price,expiration,product_id,store_id) VALUES(200, 2.50,'2021-9-02',2,1);
+INSERT INTO inventory(quantity,unit_price,expiration,product_id,store_id) VALUES(300, 3.50,'2021-7-02',3,1);
+INSERT INTO inventory(quantity,unit_price,expiration,product_id,store_id) VALUES(400, 4.50,'2021-6-02',4,1);
+INSERT INTO inventory(quantity,unit_price,expiration,product_id,store_id) VALUES(500, 5.50,'2021-4-02',5,1);
+INSERT INTO inventory(quantity,unit_price,expiration,product_id,store_id) VALUES(600, 6.50,'2021-1-02',5,1);

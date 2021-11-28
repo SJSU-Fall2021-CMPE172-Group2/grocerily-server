@@ -50,12 +50,13 @@ CREATE TABLE supply
 
 CREATE TABLE inventory
 (
+  inventory_id INT AUTO_INCREMENT NOT NULL,
   quantity INT NOT NULL,
   unit_price FLOAT NOT NULL,
-  stock_date DATE NOT NULL,
+  expiration DATE NOT NULL,
   product_id INT NOT NULL,
   store_id INT NOT NULL,
-  PRIMARY KEY (product_id, store_id),
-  FOREIGN KEY (product_id) REFERENCES product(product_id),
-  FOREIGN KEY (store_id) REFERENCES store(store_id)
+  PRIMARY KEY (inventory_id),
+  FOREIGN KEY (product_id) REFERENCES products(product_id),
+  FOREIGN KEY (store_id) REFERENCES stores(store_id)
 );
