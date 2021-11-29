@@ -1,7 +1,6 @@
 package edu.sjsu.enterprise.grocery.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,13 +20,13 @@ public class GroceryController {
   private ProductRepository productRepository;
 
   @PostMapping(path="/add", consumes = "application/json")
-  public @ResponseBody String addNewUser (@RequestBody Products product) {
+  public @ResponseBody String addNewProduct (@RequestBody Products product) {
     productRepository.save(product);
     return "Saved";
   }
 
   @GetMapping(path="/all", produces = "application/json")
-  public @ResponseBody Iterable<Products> getAllUsers() {
+  public @ResponseBody Iterable<Products> getAllProducts() {
     // This returns a JSON or XML with the users
     return productRepository.findAll();
   }

@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Inventory {
 
@@ -19,7 +21,7 @@ public class Inventory {
 	@Column(name = "inventory_id")
 	private Integer inventoryId;
 
-	private Float quantity;
+	private Integer quantity;
 
 	private Float unit_price;
 
@@ -41,7 +43,7 @@ public class Inventory {
 
 	private Integer store_id;
 
-	public Float getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
 
@@ -53,7 +55,7 @@ public class Inventory {
 		this.inventoryId = inventoryId;
 	}
 
-	public void setQuantity(Float quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 
@@ -83,6 +85,7 @@ public class Inventory {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id", nullable = false)
+	@JsonIgnore
 	private Products product;
 
 }
