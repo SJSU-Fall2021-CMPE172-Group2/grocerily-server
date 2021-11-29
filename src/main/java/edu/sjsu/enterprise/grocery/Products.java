@@ -9,11 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "products")
+@Table(name = "product")
 public class Products {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +23,11 @@ public class Products {
 	private String product_name;
 
 	private Integer cat_id;
+	
+	private float base_price;
+	
+	@Transient
+	private Integer quantity;
 
 	public Integer getProduct_id() {
 		return product_id;
@@ -55,7 +61,23 @@ public class Products {
 		this.inventory = inventory;
 	}
 
+	public float getBase_price() {
+		return base_price;
+	}
+
+	public void setBase_price(float base_price) {
+		this.base_price = base_price;
+	}
+	
+	public Integer getQuantity() {
+		this.quantity = 0;
+		for (var item : inventory)
+		{
+			this.quantity += item.getQuantity();
+		}
+		return this.quantity;
+	}
+
 	@OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-	@JsonIgnore
 	Set<Inventory> inventory;
 }
