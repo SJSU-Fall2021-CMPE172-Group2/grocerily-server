@@ -26,6 +26,9 @@ public class Inventory {
 	private Float unit_price;
 
 	private Date expiration;
+	
+	private Integer product_id;
+	
 
 	public Integer getStore_id() {
 		return store_id;
@@ -38,7 +41,7 @@ public class Inventory {
 	@Override
 	public String toString() {
 		return "Inventory [inventoryId=" + inventoryId + ", quantity=" + quantity + ", unit_price=" + unit_price
-				+ ", expiration=" + expiration + ", store_id=" + store_id + ", product=" + product + "]";
+				+ ", expiration=" + expiration + ", store_id=" + store_id + ", product_id=" + product_id + "]";
 	}
 
 	private Integer store_id;
@@ -63,14 +66,6 @@ public class Inventory {
 		return unit_price;
 	}
 
-	public Products getProduct() {
-		return product;
-	}
-
-	public void setProduct(Products product) {
-		this.product = product;
-	}
-
 	public void setUnit_price(Float unit_price) {
 		this.unit_price = unit_price;
 	}
@@ -82,10 +77,13 @@ public class Inventory {
 	public void setExpiration(Date expiration) {
 		this.expiration = expiration;
 	}
+	
+	public Integer getProduct_id() {
+		return product_id;
+	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "product_id", nullable = false)
-	@JsonIgnore
-	private Products product;
+	public void setProduct_id(Integer product_id) {
+		this.product_id = product_id;
+	}
 
 }
